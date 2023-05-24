@@ -35,7 +35,13 @@ const createSitemap = (siteMap: SiteMap) =>
   `<?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-      <loc>${host}</loc>
+      <loc>https://aixcopilot.com</loc>
+    </url>
+    <url>
+      <loc>https://aixcopilot.com/signup</loc>
+    </url>
+    <url>
+      <loc>https://aixcopilot.com/signin</loc>
     </url>
 
     <url>
@@ -43,14 +49,14 @@ const createSitemap = (siteMap: SiteMap) =>
     </url>
 
     ${Object.keys(siteMap.canonicalPageMap)
-      .map((canonicalPagePath) =>
-        `
+    .map((canonicalPagePath) =>
+      `
           <url>
             <loc>${host}/${canonicalPagePath}</loc>
           </url>
         `.trim()
-      )
-      .join('')}
+    )
+    .join('')}
   </urlset>
 `
 
